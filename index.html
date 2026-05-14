@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gin's Garden — Floral Artistry & Botanical Compositions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #f4ede2;
+    --cream: #ebe1d0;
+    --ink: #2a2622;
+    --ink-soft: #4a4138;
+    --rose: #c97a7a;
+    --rose-deep: #9c4848;
+    --moss: #5a6b4a;
+    --moss-deep: #3d4a32;
+    --blush: #e8c4c0;
+    --gold: #b8956a;
+    --lilac: #a285b8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Paper grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(184, 149, 106, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(156, 72, 72, 0.03) 0%, transparent 40%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+  }
+
+  /* Typography */
+  .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-variation-settings: "opsz" 144;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+
+  .label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .italic-script {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: "opsz" 144;
+  }
+
+  /* NAVIGATION */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.75rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(244, 237, 226, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(42, 38, 34, 0.08);
+  }
+
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--rose-deep); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--rose-deep);
+    transition: width 0.4s ease;
+  }
+
+  .nav-links a:hover { color: var(--rose-deep); }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 8rem 3rem 4rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-text { position: relative; }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .eyebrow-line {
+    width: 60px;
+    height: 1px;
+    background: var(--ink);
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 9vw, 9rem);
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 .ornament {
+    color: var(--rose-deep);
+    font-style: italic;
+    display: inline-block;
+    transform: translateY(0.1em);
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(42, 38, 34, 0.15);
+  }
+
+  .meta-item .label { color: var(--ink-soft); margin-bottom: 0.4rem; display: block; }
+  .meta-item .value { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.1rem; }
+
+  .hero-image-wrap {
+    position: relative;
+    aspect-ratio: 3/4;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.08) saturate(1.05);
+    box-shadow: 
+      0 30px 60px -20px rgba(42, 38, 34, 0.25),
+      0 0 0 1px rgba(42, 38, 34, 0.05);
+  }
+
+  .hero-watercolor {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 200px;
+    z-index: -1;
+    opacity: 0.7;
+  }
+
+  .hero-tag {
+    position: absolute;
+    bottom: -20px;
+    left: -30px;
+    background: var(--bone);
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--ink);
+    transform: rotate(-3deg);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .hero-tag .label { display: block; margin-bottom: 0.25rem; }
+  .hero-tag .tag-name { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; }
+
+  /* PHILOSOPHY SECTION */
+  .philosophy {
+    padding: 8rem 3rem;
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .philosophy-label { color: var(--rose-deep); position: sticky; top: 8rem; }
+
+  .philosophy-text h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-family: 'Fraunces', serif;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+  }
+
+  .philosophy-text h2 em {
+    color: var(--rose-deep);
+    font-style: italic;
+  }
+
+  .philosophy-text p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--ink-soft);
+  }
+
+  .signature {
+    margin-top: 3rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--rose-deep);
+  }
+
+  /* GALLERY */
+  .gallery {
+    padding: 6rem 3rem;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to bottom, transparent, rgba(232, 196, 192, 0.15), transparent);
+  }
+
+  .gallery-header {
+    max-width: 1400px;
+    margin: 0 auto 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .gallery-header h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+
+  .gallery-header h2 em {
+    font-style: italic;
+    color: var(--rose-deep);
+  }
+
+  .gallery-header p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 380px;
+  }
+
+  .gallery-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+  }
+
+  .arrangement {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .arrangement img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.05);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  }
+
+  .arrangement:hover img {
+    transform: scale(1.04);
+    filter: sepia(0) saturate(1.08);
+  }
+
+  .arr-1 { grid-column: 1 / 7; aspect-ratio: 3/4; }
+  .arr-2 { grid-column: 7 / 13; aspect-ratio: 3/4; margin-top: 5rem; }
+
+  .arr-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    background: rgba(244, 237, 226, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .arr-caption-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+  }
+
+  .arr-caption-meta { font-size: 0.9rem; color: var(--ink-soft); }
+
+  /* WATERCOLOR ILLUSTRATION SECTION */
+  .watercolor-section {
+    padding: 8rem 3rem;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .watercolor-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .watercolor-art {
+    width: 100%;
+    height: auto;
+  }
+
+  .wc-text h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+  }
+
+  .wc-text h2 em { font-style: italic; color: var(--moss-deep); }
+
+  .wc-text p {
+    font-size: 1.2rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 8rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .services-header h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .services-header h2 em {
+    font-style: italic;
+    color: var(--rose-deep);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(42, 38, 34, 0.2);
+  }
+
+  .service {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid rgba(42, 38, 34, 0.2);
+    border-right: 1px solid rgba(42, 38, 34, 0.2);
+    position: relative;
+    transition: background 0.4s ease;
+  }
+
+  .service:nth-child(3n) { border-right: none; }
+
+  .service:hover { background: rgba(232, 196, 192, 0.15); }
+
+  .service-number {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--rose-deep);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+  }
+
+  .service h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .service h3 em { font-style: italic; color: var(--rose-deep); }
+
+  .service p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-price {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink);
+    font-size: 1.1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(42, 38, 34, 0.15);
+  }
+
+  /* TESTIMONIAL */
+  .testimonial {
+    padding: 8rem 3rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to bottom, transparent, rgba(184, 149, 106, 0.08), transparent);
+  }
+
+  .testimonial-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 8rem;
+    color: var(--rose-deep);
+    line-height: 0.5;
+    opacity: 0.4;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.3;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .testimonial-author {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 8rem 3rem 4rem;
+    background: var(--ink);
+    color: var(--bone);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.9 0 0 0 0 0.8 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .contact-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 6rem;
+    align-items: start;
+    margin-bottom: 5rem;
+  }
+
+  .contact h2 {
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+  }
+
+  .contact h2 em {
+    font-style: italic;
+    color: var(--blush);
+  }
+
+  .contact-blurb {
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--cream);
+    margin-bottom: 3rem;
+    max-width: 500px;
+  }
+
+  .contact-details {
+    list-style: none;
+  }
+
+  .contact-details li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(244, 237, 226, 0.15);
+  }
+
+  .contact-details .label {
+    color: var(--blush);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-details .value {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(244, 237, 226, 0.15);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--cream);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-bottom-logo {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--blush);
+    letter-spacing: 0;
+  }
+
+  /* DECORATIVE FLORAL ELEMENTS */
+  .floating-flower {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+  }
+
+  .hero-text > * { animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-text > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-text > *:nth-child(2) { animation-delay: 0.3s; }
+  .hero-text > *:nth-child(3) { animation-delay: 0.5s; }
+  .hero-text > *:nth-child(4) { animation-delay: 0.7s; }
+
+  .hero-image-wrap { animation: fadeUp 1.4s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  .floating-flower { animation: sway 8s ease-in-out infinite; }
+
+  /* RESPONSIVE */
+  @media (max-width: 968px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 3rem; }
+    .philosophy { grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.5rem; }
+    .philosophy-label { position: static; }
+    .gallery { padding: 4rem 1.5rem; }
+    .gallery-grid { gap: 1rem; }
+    .arr-1, .arr-2 { grid-column: 1 / 13; margin-top: 0; }
+    .watercolor-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .watercolor-section { padding: 5rem 1.5rem; }
+    .services { padding: 5rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service { border-right: none !important; }
+    .testimonial { padding: 5rem 1.5rem; }
+    .contact { padding: 5rem 1.5rem 3rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    .hero-meta { gap: 1.5rem; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">Gin's <span>Garden</span></div>
+  <ul class="nav-links">
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#gallery">Arrangements</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Inquire</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="label">Floral Artist · Est. Bloomtime</span>
+    </div>
+    <h1 class="display">
+      Flowers, <span class="ornament">arranged</span><br>
+      like <em class="italic-script">poetry</em>.
+    </h1>
+    <p class="hero-subtitle">A small studio practice devoted to garden-gathered, season-led arrangements — where every stem earns its place.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="label">Studio</span>
+        <span class="value">By appointment</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Season</span>
+        <span class="value">Late Spring</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Origin</span>
+        <span class="value">Garden-cut</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image-wrap">
+    <!-- Watercolor accent behind image -->
+    <svg class="hero-watercolor" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="wc1" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#c97a7a" stop-opacity="0.6"/>
+          <stop offset="60%" stop-color="#e8c4c0" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#e8c4c0" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="wc2" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#5a6b4a" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#5a6b4a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="100" cy="80" rx="80" ry="70" fill="url(#wc1)"/>
+      <ellipse cx="60" cy="130" rx="50" ry="40" fill="url(#wc2)"/>
+    </svg>
+    <img src="bouquet-1.jpg" alt="A vibrant arrangement with peach roses, purple rhododendrons, red azaleas and baby's breath" class="hero-image">
+    <div class="hero-tag">
+      <span class="label">No. 01</span>
+      <span class="tag-name">The Garden Bouquet</span>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="philosophy-label">
+    <span class="label">— Chapter One</span>
+  </div>
+  <div class="philosophy-text">
+    <h2>I don't believe in <em>perfect</em> flowers. I believe in <em>honest</em> ones.</h2>
+    <p>Each arrangement begins in the garden, before the sun is high. What I bring back is what asks to be brought — the rhododendron in its third bloom, a stem of lilac that survived the wind, baby's breath drying gracefully on the vine.</p>
+    <p>My work is not florist work. It is gathering, listening, composing. The vase is the last consideration; the flower's gesture comes first.</p>
+    <div class="signature">— Gin</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <h2 class="display">Recent <em>compositions</em></h2>
+    <p>Two arrangements from this season's garden — captured in the studio kitchen where most of my work begins and ends.</p>
+  </div>
+  <div class="gallery-grid">
+    <figure class="arrangement arr-1">
+      <img src="bouquet-1.jpg" alt="Spring arrangement with peach roses and azaleas">
+      <figcaption class="arr-caption">
+        <span class="arr-caption-title">The Garden Bouquet</span>
+        <span class="arr-caption-meta">No. 01 · Late Spring</span>
+      </figcaption>
+    </figure>
+    <figure class="arrangement arr-2">
+      <img src="bouquet-2.jpg" alt="Soft pink and white rhododendron arrangement">
+      <figcaption class="arr-caption">
+        <span class="arr-caption-title">A Quiet Sunday</span>
+        <span class="arr-caption-meta">No. 02 · May 11</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- WATERCOLOR SECTION -->
+<section class="watercolor-section">
+  <div class="watercolor-wrap">
+    <svg class="watercolor-art" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Watercolor gradients -->
+        <radialGradient id="petal-pink" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#f5d4d0" stop-opacity="0.95"/>
+          <stop offset="60%" stop-color="#e8a5a0" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#c97a7a" stop-opacity="0.3"/>
+        </radialGradient>
+        <radialGradient id="petal-peach" cx="40%" cy="40%">
+          <stop offset="0%" stop-color="#fce4d0" stop-opacity="0.95"/>
+          <stop offset="60%" stop-color="#f0c4a8" stop-opacity="0.75"/>
+          <stop offset="100%" stop-color="#d49585" stop-opacity="0.3"/>
+        </radialGradient>
+        <radialGradient id="petal-purple" cx="50%" cy="40%">
+          <stop offset="0%" stop-color="#d5c0e0" stop-opacity="0.9"/>
+          <stop offset="60%" stop-color="#a285b8" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#7a5d95" stop-opacity="0.3"/>
+        </radialGradient>
+        <radialGradient id="leaf" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#7a8a65" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#3d4a32" stop-opacity="0.4"/>
+        </radialGradient>
+        <radialGradient id="center" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#b8956a" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#8a6a45" stop-opacity="0.3"/>
+        </radialGradient>
+        <filter id="watercolor-edge">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="2"/>
+          <feDisplacementMap in="SourceGraphic" scale="4"/>
+        </filter>
+        <filter id="watercolor-soft">
+          <feGaussianBlur stdDeviation="0.5"/>
+        </filter>
+      </defs>
+
+      <!-- Background wash -->
+      <ellipse cx="250" cy="270" rx="200" ry="220" fill="#f5d4d0" opacity="0.08"/>
+
+      <!-- Stems -->
+      <g stroke="#5a6b4a" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round">
+        <path d="M 250 480 Q 250 380 240 280"/>
+        <path d="M 250 480 Q 250 420 210 320"/>
+        <path d="M 250 480 Q 250 420 290 340"/>
+        <path d="M 250 480 Q 250 410 180 270"/>
+        <path d="M 250 480 Q 250 410 320 290"/>
+      </g>
+
+      <!-- Leaves -->
+      <g filter="url(#watercolor-edge)">
+        <ellipse cx="195" cy="360" rx="30" ry="12" fill="url(#leaf)" transform="rotate(-40 195 360)"/>
+        <ellipse cx="305" cy="370" rx="32" ry="13" fill="url(#leaf)" transform="rotate(35 305 370)"/>
+        <ellipse cx="220" cy="420" rx="28" ry="10" fill="url(#leaf)" transform="rotate(-20 220 420)"/>
+        <ellipse cx="285" cy="425" rx="26" ry="11" fill="url(#leaf)" transform="rotate(25 285 425)"/>
+      </g>
+
+      <!-- ROSE - peach center, large -->
+      <g filter="url(#watercolor-edge)">
+        <circle cx="240" cy="265" r="60" fill="url(#petal-peach)" opacity="0.9"/>
+        <circle cx="245" cy="255" r="45" fill="url(#petal-peach)" opacity="0.85"/>
+        <circle cx="240" cy="260" r="30" fill="url(#petal-pink)" opacity="0.75"/>
+        <circle cx="242" cy="262" r="15" fill="#c97a7a" opacity="0.5"/>
+      </g>
+
+      <!-- PURPLE rhododendron - left -->
+      <g filter="url(#watercolor-edge)">
+        <ellipse cx="170" cy="290" rx="45" ry="38" fill="url(#petal-purple)" opacity="0.9"/>
+        <ellipse cx="160" cy="275" rx="22" ry="18" fill="url(#petal-purple)" opacity="0.85"/>
+        <ellipse cx="180" cy="305" rx="20" ry="16" fill="url(#petal-purple)" opacity="0.85"/>
+        <circle cx="170" cy="290" r="5" fill="#7a5d95" opacity="0.6"/>
+      </g>
+
+      <!-- PINK rhododendron - right -->
+      <g filter="url(#watercolor-edge)">
+        <ellipse cx="320" cy="305" rx="48" ry="40" fill="url(#petal-pink)" opacity="0.9"/>
+        <ellipse cx="335" cy="295" rx="22" ry="18" fill="url(#petal-pink)" opacity="0.85"/>
+        <ellipse cx="310" cy="320" rx="20" ry="16" fill="url(#petal-pink)" opacity="0.85"/>
+        <circle cx="320" cy="305" r="5" fill="#9c4848" opacity="0.6"/>
+      </g>
+
+      <!-- Small accent buds -->
+      <g filter="url(#watercolor-edge)">
+        <ellipse cx="220" cy="200" rx="18" ry="22" fill="url(#petal-peach)" opacity="0.85"/>
+        <ellipse cx="280" cy="195" rx="16" ry="20" fill="url(#petal-pink)" opacity="0.8"/>
+      </g>
+
+      <!-- Baby's breath dots -->
+      <g fill="#f4ede2" opacity="0.95">
+        <circle cx="140" cy="240" r="3"/>
+        <circle cx="145" cy="232" r="2.5"/>
+        <circle cx="135" cy="248" r="2"/>
+        <circle cx="155" cy="225" r="2.5"/>
+        <circle cx="148" cy="218" r="2"/>
+        <circle cx="360" cy="240" r="3"/>
+        <circle cx="365" cy="232" r="2.5"/>
+        <circle cx="355" cy="248" r="2"/>
+        <circle cx="370" cy="220" r="2"/>
+        <circle cx="378" cy="228" r="2.5"/>
+      </g>
+
+      <!-- Top sprigs -->
+      <g stroke="#5a6b4a" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round">
+        <path d="M 250 200 Q 240 160 230 130"/>
+        <path d="M 250 200 Q 260 165 275 135"/>
+        <path d="M 230 130 Q 215 120 200 115"/>
+        <path d="M 275 135 Q 290 125 305 122"/>
+      </g>
+
+      <!-- Top leaves -->
+      <ellipse cx="215" cy="135" rx="12" ry="5" fill="url(#leaf)" opacity="0.7" transform="rotate(-30 215 135)" filter="url(#watercolor-edge)"/>
+      <ellipse cx="285" cy="138" rx="12" ry="5" fill="url(#leaf)" opacity="0.7" transform="rotate(30 285 138)" filter="url(#watercolor-edge)"/>
+
+      <!-- Watercolor splatter for texture -->
+      <g opacity="0.3">
+        <circle cx="110" cy="200" r="2" fill="#c97a7a"/>
+        <circle cx="95" cy="380" r="1.5" fill="#a285b8"/>
+        <circle cx="400" cy="200" r="2" fill="#c97a7a"/>
+        <circle cx="410" cy="370" r="1.5" fill="#7a5d95"/>
+        <circle cx="80" cy="290" r="1" fill="#5a6b4a"/>
+        <circle cx="425" cy="290" r="1" fill="#5a6b4a"/>
+      </g>
+    </svg>
+
+    <div class="wc-text">
+      <span class="label" style="color: var(--moss-deep);">— Studies in Watercolor</span>
+      <h2 style="margin-top: 1.5rem;">Painted from the <em>same vase</em>.</h2>
+      <p>Every arrangement I make is also painted. The watercolors slow me down — they teach me what I missed when I was only arranging. A record of what bloomed and what it looked like before it didn't.</p>
+      <p style="font-style: italic; color: var(--moss-deep);">Original watercolor studies available alongside fresh commissions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <h2 class="display">What I <em>offer</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service">
+      <div class="service-number">No. 01</div>
+      <svg class="service-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="s1"><stop offset="0%" stop-color="#e8a5a0"/><stop offset="100%" stop-color="#c97a7a"/></radialGradient>
+        </defs>
+        <ellipse cx="30" cy="28" rx="20" ry="18" fill="url(#s1)" opacity="0.9"/>
+        <ellipse cx="30" cy="26" rx="12" ry="10" fill="#c97a7a" opacity="0.5"/>
+        <path d="M 30 46 L 30 56" stroke="#5a6b4a" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="22" cy="50" rx="6" ry="2" fill="#5a6b4a" opacity="0.7" transform="rotate(-30 22 50)"/>
+      </svg>
+      <h3>The <em>Weekly</em> Vase</h3>
+      <p>A standing order. Fresh flowers from my garden, arranged in your home or office once a week. No two arrangements alike.</p>
+      <div class="service-price">From $85 / week</div>
+    </div>
+    <div class="service">
+      <div class="service-number">No. 02</div>
+      <svg class="service-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="s2"><stop offset="0%" stop-color="#d5c0e0"/><stop offset="100%" stop-color="#a285b8"/></radialGradient>
+        </defs>
+        <circle cx="30" cy="20" r="8" fill="url(#s2)" opacity="0.9"/>
+        <circle cx="20" cy="32" r="9" fill="url(#s2)" opacity="0.85"/>
+        <circle cx="40" cy="32" r="9" fill="url(#s2)" opacity="0.85"/>
+        <circle cx="30" cy="42" r="10" fill="url(#s2)" opacity="0.9"/>
+        <path d="M 30 52 L 30 58" stroke="#5a6b4a" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h3>Event <em>Florals</em></h3>
+      <p>Small weddings, intimate dinners, milestone celebrations. I take on a few each season and pour everything into them.</p>
+      <div class="service-price">Inquire for quote</div>
+    </div>
+    <div class="service">
+      <div class="service-number">No. 03</div>
+      <svg class="service-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="12" y="14" width="36" height="32" fill="#f4ede2" stroke="#2a2622" stroke-width="1.5"/>
+        <ellipse cx="30" cy="28" rx="10" ry="8" fill="#e8a5a0" opacity="0.7"/>
+        <ellipse cx="22" cy="34" rx="5" ry="4" fill="#a285b8" opacity="0.7"/>
+        <ellipse cx="38" cy="36" rx="5" ry="4" fill="#7a8a65" opacity="0.7"/>
+        <path d="M 16 42 L 44 42" stroke="#5a6b4a" stroke-width="1"/>
+      </svg>
+      <h3>Watercolor <em>Studies</em></h3>
+      <p>Hand-painted portraits of your own bouquet, your wedding flowers, or a meaningful arrangement — kept long after the petals fall.</p>
+      <div class="service-price">From $120 / piece</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="testimonial-content">
+    <div class="quote-mark">"</div>
+    <p class="testimonial-text">Gin doesn't deliver flowers. She delivers a small <em class="italic-script">held breath</em> — the kind of arrangement you keep walking back to all afternoon.</p>
+    <p class="testimonial-author">— A regular client, four years running</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div>
+        <span class="label" style="color: var(--blush);">— Begin a conversation</span>
+        <h2 style="margin-top: 1.5rem;" class="display">Let's make<br>something <em>beautiful</em>.</h2>
+        <p class="contact-blurb">I take on a small number of commissions each season. Tell me a little about the occasion, the room, the season — and I'll write back with what feels right.</p>
+      </div>
+      <ul class="contact-details">
+        <li>
+          <span class="label">Write</span>
+          <span class="value">hello@ginsgarden.studio</span>
+        </li>
+        <li>
+          <span class="label">Studio</span>
+          <span class="value">Pacific Northwest · by appointment</span>
+        </li>
+        <li>
+          <span class="label">Hours</span>
+          <span class="value">Tuesday — Saturday, mornings</span>
+        </li>
+        <li>
+          <span class="label">Field Notes</span>
+          <span class="value">@ginsgarden</span>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-bottom-logo">Gin's Garden</span>
+      <span>© Bloomtime · Hand-tended, hand-arranged.</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Subtle scroll reveal for sections
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.philosophy, .gallery, .watercolor-section, .services, .testimonial').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
